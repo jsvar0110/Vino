@@ -38,7 +38,14 @@
 
     <!-- Video Section -->
     <div class="video relative w-full h-[85vh]">
-      <button class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 px-5 py-4 bg-white rounded-full">Watch reel</button>
+      <video id="reelVideo" class="hidden w-full h-full object-cover absolute top-0 left-0 z-[9999]" src="./vp.mp4" muted playsinline controls></video>
+
+      <button id="watchReelBtn" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  bg-white rounded-full z-[999]">
+        <svg width="70" height="70" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="48" fill="white" stroke-width="2"/>
+          <polygon points="40,30 70,50 40,70" fill="black"/>
+        </svg>
+      </button>
       <img class="object-cover w-full h-full object-top" src="./exp-1.jpg">
     </div>
 

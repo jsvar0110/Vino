@@ -125,3 +125,26 @@ window.addEventListener('resize', () => {
   renderer.setSize(window.innerWidth, window.innerHeight);
   updatePlanesPosition();
 });
+
+const watchBtn = document.getElementById("watchReelBtn");
+const reelVideo = document.getElementById("reelVideo");
+
+watchBtn.addEventListener("click", () => {
+  reelVideo.classList.remove("hidden");
+  reelVideo.play();
+  watchBtn.classList.add("hidden"); // Hide the button after click
+  
+  // Create close button
+  const closeBtn = document.createElement("button");
+  closeBtn.innerHTML = "✕";
+  closeBtn.classList.add("absolute", "top-4", "right-4", "z-[9999]", "bg-white", "rounded-full", "w-8", "h-8", "flex", "items-center", "justify-center", "font-bold");
+  document.querySelector('.video').appendChild(closeBtn);
+  
+  // Add event listener to close button
+  closeBtn.addEventListener("click", () => {
+    reelVideo.classList.add("hidden");
+    reelVideo.pause();
+    watchBtn.classList.remove("hidden");
+    closeBtn.remove();
+  });
+});
